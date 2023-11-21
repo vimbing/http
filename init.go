@@ -58,12 +58,24 @@ func (c *Config) parse() {
 	c.parseProxy()
 }
 
-func Init(config Config) *Client {
-	config.parse()
+func parseConfigArgs(config ...Config) Config {
+	var cfg Config
+
+	if len(config) > 0 {
+		cfg = config[0]
+	}
+
+	return cfg
+}
+
+func Init(config ...Config) *Client {
+	cfg := parseConfigArgs(config...)
+
+	cfg.parse()
 
 	client := &Client{
 		internal: internal{
-			config: config,
+			config: cfg,
 		},
 	}
 
