@@ -6,6 +6,7 @@ import (
 
 	"github.com/vimbing/cclient"
 	vhttp "github.com/vimbing/fhttp"
+	"github.com/vimbing/fhttp/cookiejar"
 	tls "github.com/vimbing/utls"
 )
 
@@ -30,6 +31,11 @@ func (c *Client) ChangeProxy(newProxy string) {
 	c.internal.config.Proxy = newProxy
 	c.internal.config.parseProxy()
 
+	c.initClient()
+}
+
+func (c *Client) NewJar(newProxy string) {
+	c.internal.httpClient.Jar, _ = cookiejar.New(nil)
 	c.initClient()
 }
 
