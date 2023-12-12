@@ -18,7 +18,7 @@ func (r *Request) appplyArgs(args ...interface{}) {
 }
 
 func (r *Request) SetHost(host string) {
-	r.request.Host = host
+	r.host = &host
 }
 
 func (r *Request) initInternalRequest() error {
@@ -26,6 +26,10 @@ func (r *Request) initInternalRequest() error {
 
 	if err != nil {
 		return err
+	}
+
+	if r.host != nil {
+		req.Host = *r.host
 	}
 
 	req.Header = r.Header

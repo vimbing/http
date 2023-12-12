@@ -29,6 +29,7 @@ type Request struct {
 	Header vhttp.Header
 	Url    string
 
+	host    *string
 	request *vhttp.Request
 }
 
