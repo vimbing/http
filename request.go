@@ -17,6 +17,10 @@ func (r *Request) appplyArgs(args ...interface{}) {
 	}
 }
 
+func (r *Request) SetHost(host string) {
+	r.request.Host = host
+}
+
 func (r *Request) initInternalRequest() error {
 	req, err := vhttp.NewRequest(r.Method, r.Url, r.Body)
 
