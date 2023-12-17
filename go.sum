@@ -12,6 +12,8 @@ github.com/vimbing/cclient v0.0.0-20230405121047-abcd63de9a96 h1:DqgF0j7h5QrGX4a
 github.com/vimbing/cclient v0.0.0-20230405121047-abcd63de9a96/go.mod h1:B0Kgs1WyvIM27oM1HdNdSFPxgRMw6J2KPT6srroPV4o=
 github.com/vimbing/fhttp v0.0.0-20221020151142-202d69962c22 h1:eZMBIPdC039h1D1nYosecCAQkpC95bg+LQmZ9pynQIg=
 github.com/vimbing/fhttp v0.0.0-20221020151142-202d69962c22/go.mod h1:fc+yZo0LhpKhG83PJDaUFF8KFrvJvX+9FltQPZfgCzA=
+github.com/vimbing/retry v0.0.0-20231128154506-c473fbce0cb4 h1:EJBwuBZ6T42XFMd+EXTLE/ssxVtWF0cFyp5LIZ1YXYY=
+github.com/vimbing/retry v0.0.0-20231128154506-c473fbce0cb4/go.mod h1:KpRUUhEkH+ulbRjS7M/RnWODdcvvoPxr5HeZLRyqACc=
 github.com/vimbing/utls v0.0.0-20221003221406-2f6094b8625d h1:cc92RCUcs1uIoY57ce8tBO9FGB7S+VQxq64hJhfgmqc=
 github.com/vimbing/utls v0.0.0-20221003221406-2f6094b8625d/go.mod h1:hnvGM/Pm5vAkjZT87uHUb3UdryNwgT8XZPRvcsbB02c=
 github.com/vimbing/utls v0.0.0-20230220162003-5720b08bfd56 h1:VX+38J7FZLm9q7MbhDKoCTrNNeYe6quoJgdrjdhT8II=

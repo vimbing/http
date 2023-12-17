@@ -10,21 +10,27 @@ import (
 	tls "github.com/vimbing/utls"
 )
 
-func (c *Client) initClient() {
+func (c *Client) initClient() error {
 	var jarCopy vhttp.CookieJar
 	if c.internal.httpClient != nil {
 		jarCopy = c.internal.httpClient.Jar
 	}
 
-	httpClient, _ := cclient.NewClient(
+	httpClient, err := cclient.NewClient(
 		*c.internal.config.TlsHello,
 		c.internal.config.Proxy,
 		*c.internal.config.FollowRedirects,
 		time.Duration(c.internal.config.Timeout),
 	)
 
+	if err != nil {
+		return err
+	}
+
 	httpClient.Jar = jarCopy
 	c.internal.httpClient = &httpClient
+
+	return nil
 }
 
 func (c *Client) ChangeProxy(newProxy string) {

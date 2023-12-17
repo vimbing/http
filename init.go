@@ -3,7 +3,9 @@ package http
 import (
 	"fmt"
 	"strings"
+	"time"
 
+	"github.com/vimbing/retry"
 	tls "github.com/vimbing/utls"
 )
 
@@ -69,17 +71,21 @@ func parseConfigArgs(config ...Config) Config {
 }
 
 func Init(config ...Config) *Client {
-	cfg := parseConfigArgs(config...)
+	var client *Client
 
-	cfg.parse()
+	retry.Retrier{Max: 100, Delay: time.Millisecond * 25}.Retry(func() error {
+		cfg := parseConfigArgs(config...)
 
-	client := &Client{
-		internal: internal{
-			config: cfg,
-		},
-	}
+		cfg.parse()
 
-	client.initClient()
+		client = &Client{
+			internal: internal{
+				config: cfg,
+			},
+		}
+
+		return client.initClient()
+	})
 
 	return client
 }
