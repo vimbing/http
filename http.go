@@ -1,6 +1,7 @@
 package http
 
 import (
+	"errors"
 	"io"
 	"time"
 
@@ -41,7 +42,17 @@ func (c *Client) ChangeProxy(newProxy string) {
 }
 
 func (c *Client) NewJar(newProxy string) {
-	c.internal.httpClient.Jar, _ = cookiejar.New(nil)
+	if c.internal.httpClient == nil {
+		return
+	}
+
+	jar, err := cookiejar.New(nil)
+
+	if err != nil || jar == nil {
+		return
+	}
+
+	c.internal.httpClient.Jar = jar
 	c.initClient()
 }
 
@@ -67,6 +78,10 @@ func (c *Client) ChangeTimeout(newTimeout int) {
 }
 
 func (c *Client) parseResponse(originRes *vhttp.Response) (*Response, error) {
+	if originRes == nil {
+		return &Response{}, errors.New("origin response nil while trying to parse response")
+	}
+
 	body, err := io.ReadAll(originRes.Body)
 
 	if err != nil {

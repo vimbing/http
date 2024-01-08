@@ -10,7 +10,7 @@ import (
 )
 
 func (c *Config) parseProxy() {
-	if len(c.Proxy) == 0 {
+	if len(c.Proxy) == 0 || strings.HasPrefix("http", c.Proxy) {
 		return
 	}
 
