@@ -19,6 +19,7 @@ type Client struct {
 type Config struct {
 	TlsHello        *tls.ClientHelloID
 	Proxy           string
+	ProxyList       []string
 	Timeout         int
 	FollowRedirects *bool
 }

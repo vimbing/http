@@ -8,6 +8,7 @@ require (
 	github.com/tam7t/hpkp v0.0.0-20160821193359-2b70b4024ed5 // indirect
 	github.com/vimbing/cclient v0.0.0-20230405121047-abcd63de9a96 // indirect
 	github.com/vimbing/fhttp v0.0.0-20221020151142-202d69962c22 // indirect
+	github.com/vimbing/gorand v0.0.0-20240109173029-b055b5f08ee5 // indirect
 	github.com/vimbing/retry v0.0.0-20231128154506-c473fbce0cb4 // indirect
 	github.com/vimbing/utls v0.0.0-20230220162003-5720b08bfd56 // indirect
 	github.com/zhangyunhao116/fastrand v0.3.0 // indirect

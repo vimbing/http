@@ -10,9 +10,14 @@ import (
 	"io"
 
 	vhttp "github.com/vimbing/fhttp"
+	"github.com/vimbing/gorand"
 
 	"github.com/andybalholm/brotli"
 )
+
+func (c *Client) getRandomProxyFromList() string {
+	return c.internal.config.ProxyList[gorand.RandomInt(0, len(c.internal.config.ProxyList)-1)]
+}
 
 func decodeFhttp(headers vhttp.Header, body []byte) ([]byte, error) {
 	defer func() (string, error) {

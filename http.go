@@ -101,6 +101,10 @@ func (c *Client) parseResponse(originRes *vhttp.Response) (*Response, error) {
 }
 
 func (c *Client) do(req *Request) (*Response, error) {
+	if len(c.internal.config.ProxyList) > 0 {
+		c.ChangeProxy(c.getRandomProxyFromList())
+	}
+
 	err := req.initInternalRequest()
 
 	if err != nil {
