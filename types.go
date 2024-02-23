@@ -35,7 +35,8 @@ type Request struct {
 }
 
 type Response struct {
-	Body []byte
+	Body    []byte
+	Headers vhttp.Header
 
 	response *vhttp.Response
 }

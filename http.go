@@ -96,6 +96,7 @@ func (c *Client) parseResponse(originRes *vhttp.Response) (*Response, error) {
 
 	return &Response{
 		Body:     decodedBody,
+		Headers:  originRes.Header,
 		response: originRes,
 	}, nil
 }
