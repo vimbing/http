@@ -13,6 +13,7 @@ import (
 
 func (c *Client) initClient() error {
 	var jarCopy vhttp.CookieJar
+
 	if c.internal.httpClient != nil {
 		jarCopy = c.internal.httpClient.Jar
 	}

@@ -25,3 +25,7 @@ func (r *Response) StatusCode() int {
 func (r *Response) Cookies() []*vhttp.Cookie {
 	return r.response.Cookies()
 }
+
+func (r *Response) Url() string {
+	return r.response.Request.URL.String()
+}
