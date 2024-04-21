@@ -1,6 +1,7 @@
 package http
 
 import (
+	"context"
 	"errors"
 	"io"
 	"time"
@@ -102,6 +103,29 @@ func (c *Client) parseResponse(originRes *vhttp.Response) (*Response, error) {
 	}, nil
 }
 
+type requestExecuteResult struct {
+	response *Response
+	err      error
+}
+
+func (c *Client) executeRequest(req *Request, ctx context.Context, resultChan chan requestExecuteResult) {
+	res, err := c.internal.httpClient.Do(req.request)
+
+	if err != nil {
+		resultChan <- requestExecuteResult{response: &Response{response: res}, err: err}
+		return
+	}
+
+	if ctx.Err() != nil {
+		return
+	}
+
+	defer res.Body.Close()
+
+	parsedResponse, err := c.parseResponse(res)
+	resultChan <- requestExecuteResult{response: parsedResponse, err: err}
+}
+
 func (c *Client) do(req *Request) (*Response, error) {
 	if len(c.internal.config.ProxyList) > 0 {
 		c.ChangeProxy(c.getRandomProxyFromList())
@@ -113,15 +137,24 @@ func (c *Client) do(req *Request) (*Response, error) {
 		return &Response{}, err
 	}
 
-	res, err := c.internal.httpClient.Do(req.request)
+	ctx, cancel := context.WithTimeout(
+		context.Background(),
+		time.Second*time.Duration(c.internal.config.Timeout),
+	)
 
-	if err != nil {
-		return &Response{response: res}, err
+	defer cancel()
+
+	resultChan := make(chan requestExecuteResult, 1)
+
+	go c.executeRequest(req, ctx, resultChan)
+	defer close(resultChan)
+
+	select {
+	case result := <-resultChan:
+		return result.response, result.err
+	case <-ctx.Done():
+		return &Response{}, ErrRequestTimedOut
 	}
-
-	defer res.Body.Close()
-
-	return c.parseResponse(res)
 }
 
 func (c *Client) Do(req *Request) (*Response, error) {
