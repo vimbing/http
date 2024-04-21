@@ -109,6 +109,8 @@ type requestExecuteResult struct {
 }
 
 func (c *Client) executeRequest(req *Request, ctx context.Context, resultChan chan requestExecuteResult) {
+	defer close(resultChan)
+
 	res, err := c.internal.httpClient.Do(req.request)
 
 	if err != nil {
@@ -147,7 +149,6 @@ func (c *Client) do(req *Request) (*Response, error) {
 	resultChan := make(chan requestExecuteResult, 1)
 
 	go c.executeRequest(req, ctx, resultChan)
-	defer close(resultChan)
 
 	select {
 	case result := <-resultChan:
