@@ -4,6 +4,7 @@ import (
 	"context"
 	"errors"
 	"io"
+	"net/url"
 	"time"
 
 	"github.com/vimbing/cclient"
@@ -43,7 +44,7 @@ func (c *Client) ChangeProxy(newProxy string) {
 	c.initClient()
 }
 
-func (c *Client) NewJar(newProxy string) {
+func (c *Client) NewJar() {
 	if c.internal.httpClient == nil {
 		return
 	}
@@ -188,4 +189,14 @@ func (c *Client) Put(url string, args ...any) (*Response, error) {
 
 func (c *Client) Delete(url string, args ...any) (*Response, error) {
 	return c.doWithArgs(c.getRequestForMethod(url, vhttp.MethodDelete), args...)
+}
+
+func (c *Client) SetCookie(url *url.URL, cookies []*vhttp.Cookie) error {
+	if c.internal.httpClient.Jar == nil {
+		return ErrJarDoesntExist
+	}
+
+	c.internal.httpClient.Jar.SetCookies(url, cookies)
+
+	return nil
 }
