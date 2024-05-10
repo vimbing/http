@@ -200,3 +200,7 @@ func (c *Client) SetCookie(url *url.URL, cookies []*vhttp.Cookie) error {
 
 	return nil
 }
+
+func (c *Client) GetCurrentProxy() string {
+	return c.internal.config.Proxy
+}
