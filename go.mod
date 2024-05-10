@@ -3,14 +3,17 @@ module github.com/vimbing/http
 go 1.21.1
 
 require (
-	github.com/andybalholm/brotli v1.0.6 // indirect
+	github.com/andybalholm/brotli v1.0.6
+	github.com/vimbing/cclient v0.0.0-20230405121047-abcd63de9a96
+	github.com/vimbing/fhttp v0.0.0-20221020151142-202d69962c22
+	github.com/vimbing/gorand v0.0.0-20240109173029-b055b5f08ee5
+	github.com/vimbing/retry v0.0.0-20231128154506-c473fbce0cb4
+	github.com/vimbing/utls v0.0.0-20230220162003-5720b08bfd56
+)
+
+require (
 	github.com/dsnet/compress v0.0.1 // indirect
 	github.com/tam7t/hpkp v0.0.0-20160821193359-2b70b4024ed5 // indirect
-	github.com/vimbing/cclient v0.0.0-20230405121047-abcd63de9a96 // indirect
-	github.com/vimbing/fhttp v0.0.0-20221020151142-202d69962c22 // indirect
-	github.com/vimbing/gorand v0.0.0-20240109173029-b055b5f08ee5 // indirect
-	github.com/vimbing/retry v0.0.0-20231128154506-c473fbce0cb4 // indirect
-	github.com/vimbing/utls v0.0.0-20230220162003-5720b08bfd56 // indirect
 	github.com/zhangyunhao116/fastrand v0.3.0 // indirect
 	gitlab.com/yawning/bsaes.git v0.0.0-20190805113838-0a714cd429ec // indirect
 	gitlab.com/yawning/utls.git v0.0.12-1 // indirect

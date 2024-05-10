@@ -16,8 +16,6 @@ github.com/vimbing/gorand v0.0.0-20240109173029-b055b5f08ee5 h1:a/cyqEGlGv0iNwZu
 github.com/vimbing/gorand v0.0.0-20240109173029-b055b5f08ee5/go.mod h1:r5PAnSytuKu8J8FCZPVuQlcP6RnoLCMbTxrUROS4DBc=
 github.com/vimbing/retry v0.0.0-20231128154506-c473fbce0cb4 h1:EJBwuBZ6T42XFMd+EXTLE/ssxVtWF0cFyp5LIZ1YXYY=
 github.com/vimbing/retry v0.0.0-20231128154506-c473fbce0cb4/go.mod h1:KpRUUhEkH+ulbRjS7M/RnWODdcvvoPxr5HeZLRyqACc=
-github.com/vimbing/utls v0.0.0-20221003221406-2f6094b8625d h1:cc92RCUcs1uIoY57ce8tBO9FGB7S+VQxq64hJhfgmqc=
-github.com/vimbing/utls v0.0.0-20221003221406-2f6094b8625d/go.mod h1:hnvGM/Pm5vAkjZT87uHUb3UdryNwgT8XZPRvcsbB02c=
 github.com/vimbing/utls v0.0.0-20230220162003-5720b08bfd56 h1:VX+38J7FZLm9q7MbhDKoCTrNNeYe6quoJgdrjdhT8II=
 github.com/vimbing/utls v0.0.0-20230220162003-5720b08bfd56/go.mod h1:8T3EM2lY8JiiIXBbItC9+8NhD8Hl24MVk2XqmNExP8k=
 github.com/zhangyunhao116/fastrand v0.3.0 h1:7bwe124xcckPulX6fxtr2lFdO2KQqaefdtbk+mqO/Ig=
@@ -31,8 +29,6 @@ golang.org/x/crypto v0.0.0-20190325154230-a5d413f7728c/go.mod h1:djNgcEr1/C05ACk
 golang.org/x/crypto v0.0.0-20220722155217-630584e8d5aa h1:zuSxTR4o9y82ebqCUJYNGJbGPo6sKVl54f/TVDObg1c=
 golang.org/x/crypto v0.0.0-20220722155217-630584e8d5aa/go.mod h1:IxCIyHEi3zRg3s0A5j5BB6A9Jmi73HwBIUl50j+osU4=
 golang.org/x/net v0.0.0-20190328230028-74de082e2cca/go.mod h1:t9HGtf8HONx5eT2rtn7q6eTqICYqUVnKs3thJo3Qplg=
-golang.org/x/net v0.0.0-20220812165438-1d4ff48094d1 h1:mx1QvUwXKGgh+3SB51PH4G1TouzL84rLG0CtpdX+TTg=
-golang.org/x/net v0.0.0-20220812165438-1d4ff48094d1/go.mod h1:YDH+HFinaLZZlnHAfSS6ZXJJ9M9t4Dl22yv3iI2vPwk=
 golang.org/x/net v0.0.0-20220812174116-3211cb980234 h1:RDqmgfe7SvlMWoqC3xwQ2blLO3fcWcxMa3eBLRdRW7E=
 golang.org/x/net v0.0.0-20220812174116-3211cb980234/go.mod h1:YDH+HFinaLZZlnHAfSS6ZXJJ9M9t4Dl22yv3iI2vPwk=
 golang.org/x/sys v0.0.0-20190215142949-d0b11bdaac8a/go.mod h1:STP8DvDyc/dI5b8T5hshtkjS+E42TnysNCUPdjciGhY=
