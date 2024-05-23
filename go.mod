@@ -4,7 +4,7 @@ go 1.21.1
 
 require (
 	github.com/andybalholm/brotli v1.0.6
-	github.com/vimbing/cclient v0.0.0-20240523123916-8113eaa8ca8d
+	github.com/vimbing/cclient v0.0.0-20240523124635-b82d9883b7b1
 	github.com/vimbing/fhttp v0.0.0-20221020151142-202d69962c22
 	github.com/vimbing/gorand v0.0.0-20240109173029-b055b5f08ee5
 	github.com/vimbing/retry v0.0.0-20231128154506-c473fbce0cb4
