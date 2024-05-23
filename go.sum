@@ -10,6 +10,8 @@ github.com/tam7t/hpkp v0.0.0-20160821193359-2b70b4024ed5/go.mod h1:2JjD2zLQYH5HO
 github.com/ulikunitz/xz v0.5.6/go.mod h1:2bypXElzHzzJZwzH67Y6wb67pO62Rzfn7BSiF4ABRW8=
 github.com/vimbing/cclient v0.0.0-20230405121047-abcd63de9a96 h1:DqgF0j7h5QrGX4akb8ZWrz7CW5mhPbzmTL/BQHeVxvo=
 github.com/vimbing/cclient v0.0.0-20230405121047-abcd63de9a96/go.mod h1:B0Kgs1WyvIM27oM1HdNdSFPxgRMw6J2KPT6srroPV4o=
+github.com/vimbing/cclient v0.0.0-20240523123221-fd3945c9dd6b h1:G5A88jDH8QjGMQnCXEzybyvCBEHCBCk1a1j6HHaR0qQ=
+github.com/vimbing/cclient v0.0.0-20240523123221-fd3945c9dd6b/go.mod h1:B0Kgs1WyvIM27oM1HdNdSFPxgRMw6J2KPT6srroPV4o=
 github.com/vimbing/fhttp v0.0.0-20221020151142-202d69962c22 h1:eZMBIPdC039h1D1nYosecCAQkpC95bg+LQmZ9pynQIg=
 github.com/vimbing/fhttp v0.0.0-20221020151142-202d69962c22/go.mod h1:fc+yZo0LhpKhG83PJDaUFF8KFrvJvX+9FltQPZfgCzA=
 github.com/vimbing/gorand v0.0.0-20240109173029-b055b5f08ee5 h1:a/cyqEGlGv0iNwZup6q/565bipNe5EKx0Ca+BhtceXI=
