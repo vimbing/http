@@ -4,7 +4,7 @@ import (
 	"io"
 
 	vhttp "github.com/vimbing/fhttp"
-	tls "github.com/vimbing/utls"
+	tls "github.com/vimbing/vutls"
 )
 
 type internal struct {

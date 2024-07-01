@@ -10,7 +10,7 @@ import (
 	"github.com/vimbing/cclient"
 	vhttp "github.com/vimbing/fhttp"
 	"github.com/vimbing/fhttp/cookiejar"
-	tls "github.com/vimbing/utls"
+	tls "github.com/vimbing/vutls"
 )
 
 func (c *Client) initClient() error {

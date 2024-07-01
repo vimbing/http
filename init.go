@@ -6,7 +6,7 @@ import (
 	"time"
 
 	"github.com/vimbing/retry"
-	tls "github.com/vimbing/utls"
+	tls "github.com/vimbing/vutls"
 )
 
 func (c *Config) parseProxy() {
@@ -42,7 +42,7 @@ func (c *Config) parseProxy() {
 
 func (c *Config) parseClientValues() {
 	if c.TlsHello == nil {
-		c.TlsHello = &tls.HelloChrome_110
+		c.TlsHello = &tls.HelloChrome_120
 	}
 
 	if c.Timeout == 0 {
